@@ -3,6 +3,7 @@ package com.example.microservicesConfiguration;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,11 +27,15 @@ public class GreetingController {
 	private List<String> listValues;
 	
 	// # to evalute it as an expression
-	@Value("#{${dbValue}}")
-	private Map<String, String> dbValues;
+//	@Value("#{${dbValue}}")
+//	private Map<String, String> dbValues;
+//	
+	@Autowired
+	private DbSettings dbSettings;
+	
 	
 	@GetMapping("/greeting")
 	public String greeting() {
-		return greetingMessage + staticMessage + listValues + dbValues;
+		return dbSettings.getConnection() + dbSettings.getHost() + dbSettings.getPort();
 	}
 }
