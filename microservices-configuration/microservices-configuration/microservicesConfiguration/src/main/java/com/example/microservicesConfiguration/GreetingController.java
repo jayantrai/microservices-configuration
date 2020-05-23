@@ -14,18 +14,18 @@ public class GreetingController {
 	// accessing property file using @Value annotation to display the value
 	// if there is no value in the properties file, we can set default value using colon
 	// the application will not fail 
-	@Value("${ my.greeting: default value }")
-	private String greetingMessage;
-	
-	// another method 
-	@Value("some static message")
-	private String staticMessage;
-	
-	
-	// if we want a list of values
-	@Value("${my.list.values}")
-	private List<String> listValues;
-	
+//	@Value("${ my.greeting: default value }")
+//	private String greetingMessage;
+//	
+//	// another method 
+//	@Value("some static message")
+//	private String staticMessage;
+//	
+//	
+//	// if we want a list of values
+//	@Value("${my.list.values}")
+//	private List<String> listValues;
+//	
 	// # to evalute it as an expression
 //	@Value("#{${dbValue}}")
 //	private Map<String, String> dbValues;
