@@ -31,5 +31,6 @@ public class DbSettings {
 		this.port = port;
 	}
 	
+	// fresh install from github
 	
 }
