@@ -5,12 +5,13 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@ConfigurationProperties("db")
+@ConfigurationProperties(prefix = "db")
 public class DbSettings {
 	
 	private String connection;
 	private String host;
 	private int port;
+	
 	public String getConnection() {
 		return connection;
 	}
